@@ -1,4 +1,10 @@
-# react-boiler
-React, Node and Webpack boilerplate for full-stack apps
-# ReactReduxStarter
 # journies-blog
+
+##Usage
+
+Clone this repo, then run
+
+```
+npm install
+npm start
+```
