@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import BlogPosts from './BlogPosts.js';
 
 class App extends Component {
   state = {
@@ -12,10 +13,9 @@ class App extends Component {
       .catch(err => { throw new Error(err); });
   }
   render() {
-    console.log(this.state);
     return (
       <div className="app">
-        This is my app
+        <BlogPosts posts={this.state.posts} />
       </div>
     );
   }

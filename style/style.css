@@ -1,0 +1,26 @@
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+.blogposts {
+  margin-left: 240px;
+}
+
+.post {
+  margin-bottom: 30px;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.post-section {
+  padding: 15px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.post-title {
+  padding: 10px;
+}
