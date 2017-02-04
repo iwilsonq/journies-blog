@@ -5,6 +5,7 @@ class BlogPosts extends Component {
   render() {
     return (
       <div className="blogposts">
+        <h3>Recent posts</h3>
         {this.props.posts.map(post => <Post key={post._id} {...post} />)}
       </div>
     );
