@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Post = props => {
+const FeaturedPost = props => {
   return (
     <div className="post-wrapper col-sm-4">
       <div className="post">
@@ -15,4 +15,4 @@ const Post = props => {
   );
 };
 
-export default Post;
+export default FeaturedPost;

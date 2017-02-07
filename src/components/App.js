@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import BlogPosts from './BlogPosts';
 import Navigation from './Navigation';
-import Hero from './Hero';
 import Footer from './Footer';
 
 class App extends Component {
@@ -21,8 +19,7 @@ class App extends Component {
     return (
       <div className="app">
         <Navigation />
-        <Hero />
-        <BlogPosts posts={this.state.posts} />
+        {React.cloneElement(this.props.children, this.state)}
         <Footer />
       </div>
     );
