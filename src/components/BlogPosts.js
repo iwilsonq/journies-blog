@@ -4,9 +4,11 @@ import Post from './Post';
 class BlogPosts extends Component {
   render() {
     return (
-      <div className="blogposts">
-        <h3>Recent posts</h3>
-        {this.props.posts.map(post => <Post key={post._id} {...post} />)}
+      <div className="blogposts container">
+        <h2>Recent posts</h2>
+        <div className="row">
+          {this.props.posts.map(post => <Post key={post._id} {...post} />)}
+        </div>
       </div>
     );
   }

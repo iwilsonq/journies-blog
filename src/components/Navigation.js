@@ -5,7 +5,7 @@ class Navigation extends Component {
     return (
       <div className="navigation">
         <div className="brand">
-          <h1>journies</h1>
+          <h2>Developer Zen</h2>
         </div>
       </div>
     );

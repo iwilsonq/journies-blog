@@ -1,45 +1,74 @@
-body, html {
+body, html, h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
 }
 
 .navigation {
-  background-color: #fafafa;
-  height: 100vh;
+  padding: 15px;
+  max-height: 10vh;
 }
 
-.brand {
-  margin: 20px;
+.navigation .brand {
 }
 
-@media(max-width: 500px) {
-  .app {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .navigation {
-    height: 50px;
-  }
+/* HERO */
+.hero {
+  height: 90vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.2)), url(http://localhost:3090/img/trees.jpg);
+  background-position: center center;
+  background-size: cover;
 }
 
-.blogposts {
+.hero h1 {
+  padding-top: 34vh;
+  text-align: center;
+}
+
+.hero p {
+  text-align: center;
+}
+
+
+/* Recent posts */
+.blogposts h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.blogposts .col-sm-4 {
+}
+
+.post-wrapper {
 }
 
 .post {
-  margin-bottom: 30px;
-  border-left: 1px solid lightgrey;
-  border-right: 1px solid lightgrey;
-  border-top: 1px solid lightgrey;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-.post-section {
-  padding: 15px;
-  border-bottom: 1px solid lightgrey;
+  color: red;
+  box-shadow: 3px 3px 2px rgba(0,0,0,0.3);
 }
 
 .post-title {
-  padding: 10px;
+  height: 40px;
+}
+
+.post-image {
+  max-height: 165px;
+  z-index: 0;
+}
+
+.post-section img {
+  width: 100%;
+  z-index: -1;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #2d2d2d;
+  min-height: 60px;
 }
