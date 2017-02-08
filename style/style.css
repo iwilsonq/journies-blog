@@ -6,6 +6,8 @@ body, html, h1, h2, h3, h4, h5, h6 {
 .navigation {
   padding: 15px;
   max-height: 10vh;
+  background-color: #fff;
+  border-bottom: 1px solid lightgrey;
 }
 
 .navigation .brand {
@@ -61,4 +63,44 @@ body, html, h1, h2, h3, h4, h5, h6 {
   color: #fff;
   background-color: #2d2d2d;
   min-height: 60px;
+}
+
+
+/* Article */
+
+.article .content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.article {
+  margin-top: 35px;
+}
+
+.article .cover-photo {
+  width: 100%;
+  margin-top: 44px;
+  margin-bottom: 80px;
+}
+
+.cover-photo .caption {
+  max-width: 100%;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.article img {
+  width: 100%;
+}
+
+.content .article-body {
+  font-size: 1.4em;
+  line-height: 1.7;
+}
+
+.article-body p {
+  margin-top: 29px;
 }

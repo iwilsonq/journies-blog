@@ -9,7 +9,7 @@ const Hero = props => {
       <div className="cta text-center">
         <button
           className="btn btn-info btn-lg"
-          onClick={() => browserHistory.push('/posts')}
+          onClick={() => browserHistory.push('/articles')}
         >
           Read Article
         </button>
