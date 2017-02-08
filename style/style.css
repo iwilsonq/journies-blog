@@ -1,16 +1,45 @@
-body, html, h1, h2, h3, h4, h5, h6 {
+body, html, h1, h2, h3, h4, h5, h6, ul, li {
   padding: 0;
   margin: 0;
 }
 
+.navigation-wrapper {
+  width: 100vw;
+}
+
 .navigation {
+  display: flex;
+  justify-content: space-between;
   padding: 15px;
   max-height: 10vh;
+  max-width: 1000px;
   background-color: #fff;
   border-bottom: 1px solid lightgrey;
+  margin: 0 auto;
 }
 
 .navigation .brand {
+}
+
+.navigation .menu {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navigation .menu .menu-item a {
+  color: #2d2d2d;
+  margin-right: 20px;
+  padding: 3px 3px 3px 4px;
+}
+
+.navigation .menu .menu-item a:hover {
+  text-decoration: none;
+  color: green;
+  border-bottom: 2px solid green;
 }
 
 /* HERO */
@@ -103,4 +132,8 @@ body, html, h1, h2, h3, h4, h5, h6 {
 
 .article-body p {
   margin-top: 29px;
+}
+
+.article-footer {
+  margin-top: 20px;
 }
