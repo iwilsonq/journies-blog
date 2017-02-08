@@ -3,7 +3,7 @@ import React from 'react';
 const ArticleHeader = props => {
   return (
     <div className="header">
-      Header
+      <h2>Header</h2>
     </div>
   );
 };

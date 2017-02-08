@@ -5,6 +5,7 @@ body, html, h1, h2, h3, h4, h5, h6, ul, li {
 
 .navigation-wrapper {
   width: 100vw;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
 .navigation {
@@ -14,7 +15,6 @@ body, html, h1, h2, h3, h4, h5, h6, ul, li {
   max-height: 10vh;
   max-width: 1000px;
   background-color: #fff;
-  border-bottom: 1px solid lightgrey;
   margin: 0 auto;
 }
 
@@ -136,4 +136,10 @@ body, html, h1, h2, h3, h4, h5, h6, ul, li {
 
 .article-footer {
   margin-top: 20px;
+}
+
+.new-post .content textarea {
+  outline: none;
+  resize: none;
+  width: 100%;
 }

@@ -18,7 +18,7 @@ class Navigation extends Component {
               <Link to='/articles'>Articles</Link>
             </li>
             <li className="menu-item">
-              <Link to='/about'>About</Link>
+              <Link to='/new'>New Post</Link>
             </li>
             <li className="menu-item">
               <Link to='/contact'>Contact</Link>
