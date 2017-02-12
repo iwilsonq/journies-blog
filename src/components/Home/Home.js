@@ -5,8 +5,8 @@ import FeaturedPosts from './FeaturedPosts';
 const Home = props => {
   return (
     <div className="home">
-      <Hero />
-      <FeaturedPosts posts={props.posts} />
+      <Hero {...props} />
+      <FeaturedPosts articles={props.articles} />
     </div>
   );
 };

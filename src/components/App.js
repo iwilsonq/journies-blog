@@ -5,13 +5,14 @@ import Footer from './Footer';
 
 class App extends Component {
   state = {
-    posts: []
+    articles: [],
+    currentArticle: 0
   };
 
   componentDidMount() {
-    axios.get('http://localhost:3090/posts')
+    axios.get('http://localhost:3090/articles')
       .then(results => results.data)
-      .then(posts => this.setState({ posts }))
+      .then(articles => this.setState({ articles }))
       .catch(err => { throw new Error(err); });
   }
 

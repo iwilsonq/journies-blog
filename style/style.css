@@ -46,7 +46,6 @@ body, html, h1, h2, h3, h4, h5, h6, ul, li {
 .hero {
   height: 90vh;
   width: 100%;
-  background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.2)), url(http://localhost:3090/img/trees.jpg);
   background-position: center center;
   background-size: cover;
 }

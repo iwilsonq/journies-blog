@@ -10,6 +10,7 @@ const config = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     filename: 'bundle.js'
   },
   module: {
@@ -25,6 +26,11 @@ const config = {
       }
     ]
   },
+  devServer: {
+    historyApiFallback: {
+      index: 'index.html'
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html'
@@ -33,7 +39,7 @@ const config = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   ]
 };
 
