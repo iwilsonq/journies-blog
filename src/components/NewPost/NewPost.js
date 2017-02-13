@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { browserHistory } from 'react-router';
 import ArticleHeader from '../Article/ArticleHeader';
 
 const ax = axios.create({
@@ -33,7 +34,10 @@ export default class NewPost extends Component {
     params.append('image', this.refs.coverImage.files[0]);
 
     ax.post('/articles', params)
-      .then(results => console.log(results.data))
+      .then(results => {
+        console.log(results.data);
+        browserHistory.push('/');
+      })
       .catch(err => console.warn(err));
 
   }
@@ -47,6 +51,8 @@ export default class NewPost extends Component {
 
         <div className="content">
           <label htmlFor="coverImage">
+            Cover Image:
+            <br/>
             <input
               type="file"
               ref="coverImage"
@@ -55,6 +61,8 @@ export default class NewPost extends Component {
           </label>
           <br />
           <label htmlFor="caption">
+            Caption:
+            <br/>
             <input
               type="text"
               ref="caption"

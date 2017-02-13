@@ -6,7 +6,6 @@ export default class Article extends Component {
   render() {
     const { articles, currentArticle } = this.props;
     const { title, content, image, caption } = articles[currentArticle];
-    console.log(content);
 
     return (
       <div className="article">

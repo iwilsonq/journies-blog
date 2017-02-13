@@ -46,17 +46,45 @@ body, html, h1, h2, h3, h4, h5, h6, ul, li {
 .hero {
   height: 90vh;
   width: 100%;
-  background-position: center center;
+  background-color: #f4f4f4;
+}
+
+.hero .welcome {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.hero .feature-card {
+  background-color: #fff;
+  padding: 10px 0;
+}
+
+.hero .feature-card h1,
+.hero .feature-card p {
+  text-align: center;
+}
+
+.hero-features .row {
+  padding: 15px 10px;
+  margin-bottom: 40px;
+}
+
+.hero .row {
+  height: 100%;
+}
+
+.hero .whoa-banner {
+  background-image: url(//localhost:3090/img/whoa-banner.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  height: 100%;
 }
 
-.hero h1 {
-  padding-top: 34vh;
-  text-align: center;
-}
-
-.hero p {
-  text-align: center;
+@media(max-width: 767px) {
+  .hero .whoa-banner {
+    display: none;
+  }
 }
 
 
