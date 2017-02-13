@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import ArticleHeader from '../Article/ArticleHeader';
+
+const ax = axios.create({
+  baseURL: 'http://localhost:3090'
+});
 
 export default class NewPost extends Component {
   state = {
@@ -21,25 +26,41 @@ export default class NewPost extends Component {
   }
 
   handleSubmit() {
-    this.setState({ body: this.refs.textarea.value });
+    const params = new FormData();
+    params.append('title', this.refs.title.value);
+    params.append('content', this.refs.textarea.value);
+    params.append('caption', this.refs.caption.value);
+    params.append('image', this.refs.coverImage.files[0]);
+
+    ax.post('/articles', params)
+      .then(results => console.log(results.data))
+      .catch(err => console.warn(err));
+
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="new-post article">
         <div className="content">
           <ArticleHeader />
         </div>
 
-        {
-          this.state.coverPhotoExists ? null :
-          <input
-            type="file"
-            ref="coverImage"
-            onChange={this.handleCoverPhoto.bind(this)}
-          />
-        }
+        <div className="content">
+          <label htmlFor="coverImage">
+            <input
+              type="file"
+              ref="coverImage"
+              onChange={this.handleCoverPhoto.bind(this)}
+              />
+          </label>
+          <br />
+          <label htmlFor="caption">
+            <input
+              type="text"
+              ref="caption"
+              />
+          </label>
+        </div>
 
         <div className="cover-photo">
           <img id="cover-image" src="" />
@@ -47,13 +68,25 @@ export default class NewPost extends Component {
         </div>
 
         <div className="content">
+          <label htmlFor="title">
+            Title:
+            <br />
+            <input
+              type="text"
+              ref="title"
+              />
+          </label>
+          <br />
+          <label htmlFor="content">
+            Body:
+          </label>
           <textarea
             ref="textarea"
             name="article-body-input"
             id="article-body-input"
             cols="20"
             rows="20"
-          ></textarea>
+            ><pre></pre></textarea>
 
         <button
           type="button"
