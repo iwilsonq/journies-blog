@@ -7,9 +7,17 @@ class Navigation extends Component {
       <div className="navigation-wrapper">
         <div className="navigation">
           <div className="brand">
-            <h2>Zen Dev</h2>
+            <a href="//localhost:3050">
+              <h2>Zen Dev</h2>
+            </a>
           </div>
 
+          <div className="mobile-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          
           <ul className="menu">
             <li className="menu-item">
               <Link to='/'>Home</Link>

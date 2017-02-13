@@ -19,15 +19,29 @@ export default class Hero extends Component {
                   </p>
 
               </div>
-              <div className="row">
-                <p className="lead">Why you're here...</p>
-                <div className="col-sm-4">New to web development and wanna get started?</div>
-                <div className="col-sm-4">To learn some cool new hacks to use in your own projects?</div>
-                <div className="col-sm-4">To watch another developer struggle in the purgatory between birth and death?</div>
-                <h4>If you answered yes to any of the above, especially the last one, then you've come to the right place.</h4>
+              <div className="row why">
+                <p className="lead">
+                  <strong>Why you're here...</strong>
+                </p>
+                <div className="col-sm-4">
+                  <p>
+                    New to web development and wanna get started?
+                  </p>
+                </div>
+                <div className="col-sm-4">
+                  <p>
+                    To learn some cool new hacks to use in your own projects?
+                  </p>
+                </div>
+                <div className="col-sm-4">
+                  <p>
+                    To watch another developer struggle in the purgatory between birth and death?
+                  </p>
+                </div>
               </div>
               <div className="row">
                 <div className="col-md-9 col-md-offset-3">
+                  <h3>In that case you can just check out my latest article below.</h3>
                   <div className="feature-card">
                     <h1>{articles[currentArticle].title}</h1>
                     <p className="lead">Ian Wilson Date</p>
