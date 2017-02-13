@@ -4,3 +4,8 @@ export const urlify = path => {
     return ch.toLowerCase();
   }).join('');
 }
+
+export const formatDate = date => {
+  const snakeDate = date.slice(0,10);
+  return snakeDate;
+}

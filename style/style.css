@@ -3,6 +3,21 @@ body, html, h1, h2, h3, h4, h5, h6, ul, li {
   margin: 0;
 }
 
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+.timestamp {
+  text-align: right;
+  font-style: italic;
+}
+
 .app {
   height: 100%;
 }
@@ -167,6 +182,25 @@ body, html, h1, h2, h3, h4, h5, h6, ul, li {
 }
 
 
+/* AllArticles */
+
+.all-articles {
+  min-height: 75vh;
+}
+
+.all-articles .article .content {
+  border-bottom: 1px solid #4CAF50;
+}
+.all-articles .article .content:hover {
+  color: #fff;
+  background-color: #4CAF50;
+  cursor: pointer;
+}
+
+.all-articles .author {
+  text-align: right;
+}
+
 /* Article */
 
 .article .content {
@@ -214,4 +248,18 @@ body, html, h1, h2, h3, h4, h5, h6, ul, li {
   outline: none;
   resize: none;
   width: 100%;
+}
+
+.contact {
+  min-height: 73vh;
+}
+.contact p {
+  padding-left: 15px;
+}
+.contact .contact-text {
+  color: #4CAF50;
+  border-top: 2px solid #4CAF50;
+  border-bottom: 2px solid #4CAF50;
+  padding: 20px 30px;
+  margin-bottom: 10vh;
 }

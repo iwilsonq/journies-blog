@@ -6,8 +6,8 @@ import { urlify } from '../../utils/helpers';
 export default class Article extends Component {
 
   render() {
-    const { articles } = this.props;
-    const path = this.props.params.title;
+    const { articles, params } = this.props;
+    const path = params.title;
     const currentArticle = articles.findIndex(article => path === urlify(article.title));
 
     const { title, content, image, caption } = articles[currentArticle];
