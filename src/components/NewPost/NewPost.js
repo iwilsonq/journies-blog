@@ -28,7 +28,7 @@ export default class NewPost extends Component {
   handleSubmit() {
     const params = new FormData();
     params.append('title', this.refs.title.value);
-    params.append('content', this.refs.textarea.value);
+    params.append('content', JSON.stringify(this.refs.textarea.value.split('\n')));
     params.append('caption', this.refs.caption.value);
     params.append('image', this.refs.coverImage.files[0]);
 
@@ -86,7 +86,7 @@ export default class NewPost extends Component {
             id="article-body-input"
             cols="20"
             rows="20"
-            ><pre></pre></textarea>
+            ></textarea>
 
         <button
           type="button"

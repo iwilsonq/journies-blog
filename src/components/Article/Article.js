@@ -6,6 +6,7 @@ export default class Article extends Component {
   render() {
     const { articles, currentArticle } = this.props;
     const { title, content, image, caption } = articles[currentArticle];
+    console.log(content);
 
     return (
       <div className="article">
@@ -19,7 +20,7 @@ export default class Article extends Component {
         </div>
         <div className="content">
           <div className="article-body">
-            <p>{content}</p>
+            {content.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
           </div>
           <ArticleFooter />
         </div>
