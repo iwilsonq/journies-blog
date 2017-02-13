@@ -1,15 +1,12 @@
 import React from 'react';
 
 const FeaturedPost = props => {
+  const image = props.image;
   return (
-    <div className="post-wrapper col-sm-4">
-      <div className="post">
-        <div className="post-section post-image">
-          <img src="http://localhost:3090/img/snarf.jpg" alt="" />
-        </div>
-        <div className="post-section post-title">
-          <h4>{props.title}</h4>
-        </div>
+    <div className="post">
+      <div className="post-section post-title">
+        <div className="post-image" style={{backgroundImage: `url(${image})` }} />
+        <h4 className="post-title">{props.title}</h4>
       </div>
     </div>
   );

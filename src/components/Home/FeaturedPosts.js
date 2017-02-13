@@ -3,19 +3,26 @@ import FeaturedPost from './FeaturedPost';
 
 class FeaturedPosts extends Component {
   render() {
-    if (this.props.articles) {
+    const { articles } = this.props;
+    if (articles) {
       return (
-        <div className="blogposts container">
-          <h2>Highlighted Posts</h2>
-          <div className="row">
-            {this.props.articles.map(article => <FeaturedPost key={article._id} {...article} />)}
-          </div>
+        <div className="highlighted container">
+            <h2>Highlighted Posts</h2>
+            <div className="row">
+              {articles.slice(1,3).map(article => (
+                <div className="col-xs-6" key={article._id}>
+                  <FeaturedPost {...article} />
+                </div>)
+              )}
+            </div>
         </div>
       );
     }
-    return <div className="blogposts container">
-      <h2>Highlighted Posts</h2>
-    </div>;
+    return (
+      <div className="highlighted container">
+        <h2>Highlighted Posts</h2>
+      </div>
+    );
   }
 }
 

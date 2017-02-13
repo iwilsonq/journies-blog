@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = props => {
   return (
-    <div className="footer text-center">
+    <footer className="footer text-center">
       <p>&copy; Ian Wilson</p>
-    </div>
+    </footer>
   );
 };
 

@@ -40,7 +40,7 @@ export default class Hero extends Component {
                 </div>
               </div>
               <div className="row">
-                <div className="col-md-9 col-md-offset-3">
+                <div className="col-md-8 col-md-offset-2">
                   <h3>In that case you can just check out my latest article below.</h3>
                   <div className="feature-card">
                     <h1>{articles[currentArticle].title}</h1>
