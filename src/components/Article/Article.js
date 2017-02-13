@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import ArticleHeader from './ArticleHeader';
 import ArticleFooter from './ArticleFooter';
+import { urlify } from '../../utils/helpers';
 
 export default class Article extends Component {
-  render() {
-    const { articles, currentArticle } = this.props;
-    const { title, content, image, caption } = articles[currentArticle];
 
+  render() {
+    const { articles } = this.props;
+    const path = this.props.params.title;
+    const currentArticle = articles.findIndex(article => path === urlify(article.title));
+
+    const { title, content, image, caption } = articles[currentArticle];
     return (
       <div className="article">
         <div className="content">
