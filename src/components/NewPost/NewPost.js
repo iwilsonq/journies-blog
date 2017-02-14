@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 import ArticleHeader from '../Article/ArticleHeader';
-import Error from '../common/Error';
+import { Error } from '../common';
 
 const ax = axios.create({
   baseURL: 'https://journies.herokuapp.com',

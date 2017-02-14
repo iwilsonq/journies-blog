@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Gist extends Component {
+class Gist extends Component {
   constructor(props) {
     super(props);
     this.gist = props.gist;
@@ -64,3 +64,5 @@ var gistCallbackId = 0;
 Gist.nextGistCallback = () => {
   return "embed_gist_callback_" + gistCallbackId++;
 };
+
+export { Gist };

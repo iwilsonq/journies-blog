@@ -12,8 +12,8 @@
     width: 100%
   .cover-photo
     width: 100%
-    margin-top: 44px
-    margin-bottom: 80px
+    margin-top: 15px
+    margin-bottom: 40px
     .caption
       max-width: 100%
       margin-top: 10px
@@ -30,8 +30,6 @@
   p
     margin-top: 29px
 
-.article-footer
-  margin-top: 20px
 
 .all-articles
   min-height: 75vh
@@ -46,7 +44,36 @@
 
 .header
   display: flex
-  margin-bottom: 20px
+  margin-bottom: 30px
+  .author-image
+    flex: 1 0 60px
+    display: flex
+    justify-content: center
+    align-items: center
+    .avatar-image
+      max-width: 90px
+      max-height: 90px
+      border-radius: 100%
+      @media(max-width: 450px)
+        width: 21vw
+        height: 21vw
+  .author-info
+    display: flex
+    flex-direction: column
+    flex: 7
+    .details
+      color: rgba(0,0,0,0.44)
+      margin-bottom: 1px
+      font-size: 15px
+    .lead
+      margin-bottom: 5px
+      font-weight: bold
+
+
+.article-footer
+  margin-top: 30px
+  margin-bottom: 30px
+  display: flex
   .author-image
     flex: 1 0 60px
     display: flex
