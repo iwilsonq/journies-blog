@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ArticleHeader from './ArticleHeader';
 import ArticleFooter from './ArticleFooter';
 import { urlify } from '../../utils/helpers';
+import Gist from '../common/Gist';
 
 export default class Article extends Component {
 

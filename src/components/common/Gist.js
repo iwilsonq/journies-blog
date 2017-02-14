@@ -1,37 +1,66 @@
 import React, { Component } from 'react';
 
 export default class Gist extends Component {
-  state = {
-    isLoading: true,
-    src: ''
-  };
-
-  statics = {
-    gistCallbackId: 0,
-    nextGistCallback: () => {
-      return 'embed_gist_callback_' + this.statics.gistCallbackId++;
-    }
+  constructor(props) {
+    super(props);
+    this.gist = props.gist;
+    this.file = props.file;
+    this.stylesheetAdded = false;
+    this.state = {
+      isLoading: true,
+      src: ''
+    };
   }
 
   componentDidMount() {
-    const gistCallback = this.statics.nextGistCallback();
+    const gistCallback = Gist.nextGistCallback();
+    window[gistCallback] = function(gist) {
+       this.setState({
+         loading: false,
+         src: gist.div
+       });
+       this.addStylesheet(gist.stylesheet);
+    }.bind(this);
 
-    const url = "https://gist.github.com/" + this.props.gist + ".js";
-    const script = document.createElement('script');
+    var url = "https://gist.github.com/" + this.props.gist + ".json?callback=" + gistCallback;
+    if (this.props.file) {
+     url += "&file=" + this.props.file;
+    }
+
+    // Add the JSONP script tag to the document.
+    var script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = url;
     document.head.appendChild(script);
-    this.setState({
-      isLoading: false,
-      src: url
-    });
+  }
+
+  addStylesheet(href) {
+    if (!this.stylesheetAdded) {
+      this.stylesheetAdded = true;
+      const link = document.createElement('link');
+      link.type = "text/css";
+      link.rel = "stylesheet";
+      link.href = href;
+
+      document.head.appendChild(link);
+    }
   }
 
   render() {
-    if (this.state.isLoading) {
+    if (this.state.loading) {
       return <div>Loading...</div>;
     }
 
     return <div dangerouslySetInnerHTML={{ __html: this.state.src }} />;
   }
 }
+
+Gist.propTypes = {
+  gist: React.PropTypes.string.isRequired,
+  file: React.PropTypes.string
+};
+
+var gistCallbackId = 0;
+Gist.nextGistCallback = () => {
+  return "embed_gist_callback_" + gistCallbackId++;
+};
