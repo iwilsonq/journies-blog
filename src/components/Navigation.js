@@ -15,9 +15,9 @@ class Navigation extends Component {
       <div className="navigation-wrapper">
         <div className="navigation">
           <div className="brand">
-            <a href=".">
+            <Link to='/'>
               <h2>Zen Developer</h2>
-            </a>
+            </Link>
           </div>
 
           <div className="mobile-menu" onClick={this.toggleMobileMenu.bind(this)}>

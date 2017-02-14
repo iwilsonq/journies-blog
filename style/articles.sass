@@ -3,6 +3,11 @@
   .content
     max-width: 700px
     margin: 0 auto
+    @media(max-width: 740px)
+      padding: 0 20px
+      line-height: 1.58
+      letter-spacing: -0.004em
+      font-size: 16px
   img
     width: 100%
   .cover-photo
@@ -18,8 +23,10 @@
       font-size: 18px
 
 .article-body
-  font-size: 1.4em
-  line-height: 1.7
+  font-size: 18px
+  line-height: 1.58
+  letter-spacing: -0.004em
+  font-weight: 300
   p
     margin-top: 29px
 
@@ -36,3 +43,30 @@
     cursor: pointer
   .author
     text-align: right
+
+.header
+  display: flex
+  margin-bottom: 20px
+  .author-image
+    flex: 1 0 60px
+    display: flex
+    justify-content: center
+    align-items: center
+    .avatar-image
+      max-width: 90px
+      max-height: 90px
+      border-radius: 100%
+      @media(max-width: 450px)
+        width: 21vw
+        height: 21vw
+  .author-info
+    display: flex
+    flex-direction: column
+    flex: 7
+    .details
+      color: rgba(0,0,0,0.44)
+      margin-bottom: 1px
+      font-size: 15px
+    .lead
+      margin-bottom: 5px
+      font-weight: bold
