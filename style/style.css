@@ -151,7 +151,7 @@ a:hover {
 }
 
 .hero .whoa-banner {
-  background-image: url(//localhost:3090/img/whoa-banner.jpg);
+  background-image: url(https://journies.herokuapp.com/img/whoa-banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
