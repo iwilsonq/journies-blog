@@ -8,7 +8,10 @@ export default class Article extends Component {
   render() {
     const { articles, params } = this.props;
     const path = params.title;
-    const currentArticle = articles.findIndex(article => path === urlify(article.title));
+    const currentArticle = articles.findIndex(article => {
+      console.log(path, urlify(article.title));
+      return path === urlify(article.title);
+    });
 
     const { title, content, image, caption } = articles[currentArticle];
     return (
