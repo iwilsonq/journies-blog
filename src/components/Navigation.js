@@ -15,7 +15,7 @@ class Navigation extends Component {
       <div className="navigation-wrapper">
         <div className="navigation">
           <div className="brand">
-            <a href="//localhost:3050">
+            <a href="//zen-developer.herokuapp.com">
               <h2>Zen Dev</h2>
             </a>
           </div>
