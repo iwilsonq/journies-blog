@@ -3,6 +3,10 @@ import axios from 'axios';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
+const ax = axios.create({
+  baseURL: 'https://journies.herokuapp.com'
+});
+
 class App extends Component {
   state = {
     articles: [],
@@ -10,7 +14,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axios.get('http://localhost:3090/articles')
+    ax.get('/articles')
       .then(results => results.data)
       .then(articles => this.setState({ articles }))
       .catch(err => { throw new Error(err); });

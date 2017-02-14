@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 import ArticleHeader from '../Article/ArticleHeader';
+import Error from '../common/Error';
 
 const ax = axios.create({
-  baseURL: 'http://localhost:3090'
+  baseURL: 'https://journies.herokuapp.com',
 });
 
 export default class NewPost extends Component {
   state = {
-    coverPhotoExists: false
+    coverPhotoExists: false,
+    errorMessage: ''
   };
 
   handleCoverPhoto() {
@@ -38,8 +40,9 @@ export default class NewPost extends Component {
         console.log(results.data);
         browserHistory.push('/');
       })
-      .catch(err => console.warn(err));
-
+      .catch(err => {
+        this.setState({ errorMessage: err.response.statusText });
+      });
   }
 
   render() {
@@ -95,6 +98,11 @@ export default class NewPost extends Component {
             cols="20"
             rows="20"
             ></textarea>
+
+          {this.state.errorMessage !== '' ?
+            <Error message={this.state.errorMessage} /> :
+            null
+          }
 
         <button
           type="button"
