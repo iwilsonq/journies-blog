@@ -5,7 +5,10 @@ import ArticleHeader from '../Article/ArticleHeader';
 import { Error } from '../common';
 
 const ax = axios.create({
-  baseURL: 'https://journies.herokuapp.com',
+  baseURL: (process.env.NODE_ENV === 'production' ?
+    'https://journies.herokuapp.com' :
+    'http://localhost:3090'
+  )
 });
 
 export default class NewPost extends Component {
@@ -31,9 +34,16 @@ export default class NewPost extends Component {
   handleSubmit() {
     const params = new FormData();
     params.append('title', this.refs.title.value);
-    params.append('content', JSON.stringify(this.refs.textarea.value.split('\n')));
+    params.append('content', JSON.stringify(this.refs.textarea.value.split('\n\n')));
     params.append('caption', this.refs.caption.value);
     params.append('image', this.refs.coverImage.files[0]);
+
+    if (!this.refs.title.value) {
+      this.setState({
+        errorMessage: 'Cannot post article without title'
+      });
+      return;
+    }
 
     ax.post('/articles', params)
       .then(results => {

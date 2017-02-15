@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ArticleHeader from './ArticleHeader';
 import ArticleFooter from './ArticleFooter';
-import { urlify } from '../../utils/helpers';
+import { urlify, markdownParser } from '../../utils/helpers';
 import { Gist, Divider } from '../common';
 
 export default class Article extends Component {
@@ -10,7 +10,6 @@ export default class Article extends Component {
     const { articles, params } = this.props;
     const path = params.title;
     const currentArticle = articles.findIndex(article => {
-      console.log(path, urlify(article.title));
       return path === urlify(article.title);
     });
 
@@ -27,7 +26,10 @@ export default class Article extends Component {
         </div>
         <div className="content">
           <div className="article-body">
-            {content.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+            {content.map((paragraph, i) => (
+              <p key={i} dangerouslySetInnerHTML={{__html: markdownParser(paragraph)}}>
+              </p>
+            ))}
           </div>
           <Divider />
           <ArticleFooter />
