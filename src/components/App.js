@@ -3,8 +3,6 @@ import axios from 'axios';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
-console.log(process.env.NODE_ENV);
-
 const ax = axios.create({
   baseURL: 'https://journies.herokuapp.com'
 });
