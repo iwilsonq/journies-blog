@@ -10,7 +10,7 @@ const Article = props => {
           <div className="row content">
             <div className="col-sm-6">
               <h2>{props.title}</h2>
-              <p>{props.content[0]}</p>
+              <p>{props.subtitle}</p>
             </div>
             <div className="col-sm-6">
               <p className="author">Written by <strong>{props.author || 'Ian Wilson'}</strong></p>

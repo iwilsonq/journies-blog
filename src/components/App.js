@@ -4,7 +4,10 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 
 const ax = axios.create({
-  baseURL: 'https://journies.herokuapp.com'
+  baseURL: (process.env.NODE_ENV === 'production' ?
+    'https://journies.herokuapp.com' :
+    'http://localhost:3090'
+  )
 });
 
 class App extends Component {
