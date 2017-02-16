@@ -40,11 +40,11 @@ export default class Article extends Component {
                     file={file}
                     />;
                 } else if (paragraph.slice(0,3) === '###') {
-                  return <h3>{paragraph.slice(3)}</h3>;
+                  return <h3 key={i}>{paragraph.slice(3)}</h3>;
                 } else if (paragraph.slice(0,2) === '##') {
-                  return <h2>paragraph.slice(2)</h2>;
+                  return <h2 key={i}>{paragraph.slice(2)}</h2>;
                 } else if (paragraph.slice(0,1) === '#') {
-                  return <h1>{paragraph.slice(1)}</h1>;
+                  return <h1 key={i}>{paragraph.slice(1)}</h1>;
                 } else {
                   return <p
                     key={i}

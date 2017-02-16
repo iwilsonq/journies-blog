@@ -34,6 +34,7 @@ export default class NewPost extends Component {
   handleSubmit() {
     const params = new FormData();
     params.append('title', this.refs.title.value);
+    params.append('subtitle', this.refs.subtitle.value);
     params.append('content', JSON.stringify(this.refs.textarea.value.split('\n\n')));
     params.append('caption', this.refs.caption.value);
     params.append('image', this.refs.coverImage.files[0]);
@@ -62,6 +63,11 @@ export default class NewPost extends Component {
           <ArticleHeader />
         </div>
 
+        <div className="cover-photo">
+          <img id="cover-image" src="" />
+          <p className="caption"></p>
+        </div>
+
         <div className="content">
           <label htmlFor="coverImage">
             Cover Image:
@@ -83,11 +89,6 @@ export default class NewPost extends Component {
           </label>
         </div>
 
-        <div className="cover-photo">
-          <img id="cover-image" src="" />
-          <p className="caption"></p>
-        </div>
-
         <div className="content">
           <label htmlFor="title">
             Title:
@@ -95,6 +96,14 @@ export default class NewPost extends Component {
             <input
               type="text"
               ref="title"
+              />
+          </label>
+          <label htmlFor="title">
+            Subtitle:
+            <br />
+            <input
+              type="text"
+              ref="subtitle"
               />
           </label>
           <br />

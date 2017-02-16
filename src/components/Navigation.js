@@ -20,6 +20,8 @@ class Navigation extends Component {
             </Link>
           </div>
 
+          {process.env.NODE_ENV !== 'production' && <Link to='new'>NEW</Link>}
+
           <div className="mobile-menu" onClick={this.toggleMobileMenu.bind(this)}>
             <div></div>
             <div></div>
