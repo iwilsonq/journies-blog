@@ -27,10 +27,24 @@ export default class Article extends Component {
         </div>
         <div className="content">
           <div className="article-body">
-            {content.map((paragraph, i) => (
-              <p key={i} dangerouslySetInnerHTML={{__html: markdownParser(paragraph)}}>
-              </p>
-            ))}
+            {content.map((paragraph, i) => {
+              if (paragraph.slice(0,2) === 'G:') {
+                const attrs = paragraph.split(' ')
+                const gist = attrs[0].slice(2);
+                const file = attrs[1].slice(2);
+
+                return <Gist
+                  key={i}
+                  gist={gist}
+                  file={file}
+                />
+              }
+
+              return <p
+                key={i}
+                dangerouslySetInnerHTML={{__html: markdownParser(paragraph)}}
+              />;
+            })}
           </div>
           <Divider />
           <ArticleFooter />
