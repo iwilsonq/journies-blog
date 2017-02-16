@@ -8,9 +8,10 @@ export default class Article extends Component {
 
   render() {
     const { articles, params } = this.props;
+    console.log(params);
     const path = params.title;
 
-    if (articles) {
+    if (articles.length) {
       const currentArticle = articles.findIndex(article => {
         return path === urlify(article.title);
       });
@@ -41,17 +42,16 @@ export default class Article extends Component {
                     />;
                 } else if (paragraph.slice(0,3) === '###') {
                   return <h3>{paragraph.slice(3)}</h3>;
-                  } else if (paragraph.slice(0,2) === '##') {
-                    return <h2>paragraph.slice(2)</h2>;
-                    } else if (paragraph.slice(0,1) === '#') {
-                      return <h1>{paragraph.slice(1)}</h1>;
-                      } else {
-                        return <p
-                          key={i}
-                          dangerouslySetInnerHTML={{__html: markdownParser(paragraph)}}
-                          />;
-                      }
-
+                } else if (paragraph.slice(0,2) === '##') {
+                  return <h2>paragraph.slice(2)</h2>;
+                } else if (paragraph.slice(0,1) === '#') {
+                  return <h1>{paragraph.slice(1)}</h1>;
+                } else {
+                  return <p
+                    key={i}
+                    dangerouslySetInnerHTML={{__html: markdownParser(paragraph)}}
+                  />;
+                }
               })}
             </div>
             <Divider />
