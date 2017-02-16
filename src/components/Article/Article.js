@@ -8,7 +8,6 @@ export default class Article extends Component {
 
   render() {
     const { articles, params } = this.props;
-    console.log(params);
     const path = params.title;
 
     if (articles.length) {
