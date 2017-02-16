@@ -13,7 +13,7 @@ class FeaturedPosts extends Component {
             <div className="row">
               {articles.slice(0,3).map((article, index) => (
                 <div className="col-sm-4" key={article._id}>
-                  <Link to={`/articles/${urlify(articles[index+1].title)}`}>
+                  <Link to={`/articles/${urlify(articles[index].title)}`}>
                     <FeaturedPost {...article} />
                   </Link>
                 </div>
