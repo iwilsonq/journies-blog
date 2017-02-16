@@ -36,9 +36,6 @@ class Navigation extends Component {
                  <Link to='/articles'>Articles</Link>
                </li>
                <li>
-                 <Link to='/new'>New Post</Link>
-               </li>
-               <li>
                  <Link to='/contact'>Contact</Link>
                </li>
              </ul>
@@ -51,9 +48,6 @@ class Navigation extends Component {
             </li>
             <li className="menu-item">
               <Link to='/articles'>Articles</Link>
-            </li>
-            <li className="menu-item">
-              <Link to='/new'>New Post</Link>
             </li>
             <li className="menu-item">
               <Link to='/contact'>Contact</Link>
