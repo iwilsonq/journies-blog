@@ -43,18 +43,6 @@ export default class Hero extends Component {
               <div className="row">
                 <div className="col-md-8 col-md-offset-2">
                   <h3>In that case you can just check out my latest article below.</h3>
-                  <div className="feature-card">
-                    <h1>{articles[0].title}</h1>
-                    <p className="lead">Ian Wilson Date</p>
-                    <div className="cta text-center">
-                      <button
-                        className="btn btn-success"
-                        onClick={() => browserHistory.push(`/articles/${urlify(articles[0].title)}`)}
-                      >
-                        Read Article
-                      </button>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

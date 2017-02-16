@@ -11,8 +11,8 @@ class FeaturedPosts extends Component {
         <div className="highlighted container">
             <h2>Highlighted Posts</h2>
             <div className="row">
-              {articles.slice(1,3).map((article, index) => (
-                <div className="col-sm-6" key={article._id}>
+              {articles.slice(0,3).map((article, index) => (
+                <div className="col-sm-4" key={article._id}>
                   <Link to={`/articles/${urlify(articles[index+1].title)}`}>
                     <FeaturedPost {...article} />
                   </Link>
