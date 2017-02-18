@@ -7,7 +7,7 @@ const FeaturedPost = props => {
       <div
         className="image"
         style={{
-          backgroundImage: `linear-gradient(rgba(244,82,43,0.3), rgba(244,82,43,0.3)),url(${image})` 
+          backgroundImage: `url(${image})` 
         }}
       />
       <h4 className="title">{props.title}</h4>
