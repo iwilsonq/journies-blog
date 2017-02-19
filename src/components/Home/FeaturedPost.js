@@ -12,7 +12,7 @@ const FeaturedPost = props => {
       />
       <div className="card-content">
         <h4 className="title">{props.title}</h4>
-        <p className="subtitle">{props.subtitle}</p>
+        <p className="subtitle">{props.subtitle.slice(0, 48) + '...'}</p>
       </div>
     </div>
   );
