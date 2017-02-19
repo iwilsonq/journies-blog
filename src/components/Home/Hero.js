@@ -9,21 +9,26 @@ export default class Hero extends Component {
     if (articles.length) {
       return (
         <div className="hero container">
-          <div className="row">
-            <div className="col-sm-3 whoa-banner">
-            </div>
-            <div className="col-sm-9 hero-features">
-              <div className="welcome row">
-                <h2>I'm Ian Wilson, a web developer and stoic.</h2>
-                  <p className="lead">
-                    If you need a website or have an app idea, send me a line and we'll see what we can work out. But whatever you do, <strong><em>don't let your dreams be dreams.</em></strong>
-                  </p>
 
+          <div className="row">
+            <div className="banner">
+            </div>
+              <div className="welcome row">
+                <div className="col-sm-5 col-sm-offset-1 p-t-b-15">
+                  <h1>I'm Ian Wilson, and I'll be your guide this evening.</h1>
+                </div>
+                <div className="col-sm-5 p-t-b-15">
+                  <p>
+                    I imagine you are up late at night googling for fixes on your own projects, be it some program debugging or life itself.
+                  </p>
+                  <p>
+                    Regardless if you need your own website or help with your projects, send me an email and we can figure it out.
+                  </p>
+                </div>
               </div>
+
               <div className="row why">
-                <p className="lead">
-                  <strong>Why you're here...</strong>
-                </p>
+                <h2>Why you're here...</h2>
                 <div className="col-sm-4">
                   <p>
                     New to web development and wanna get started?
@@ -40,12 +45,6 @@ export default class Hero extends Component {
                   </p>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-md-8 col-md-offset-2">
-                  <h3>In that case you can just check out my latest article below.</h3>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       );
