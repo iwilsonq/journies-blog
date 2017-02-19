@@ -7,10 +7,13 @@ const FeaturedPost = props => {
       <div
         className="image"
         style={{
-          backgroundImage: `url(${image})` 
+          backgroundImage: `url(${image})`
         }}
       />
-      <h4 className="title">{props.title}</h4>
+      <div className="card-content">
+        <h4 className="title">{props.title}</h4>
+        <p className="subtitle">{props.subtitle}</p>
+      </div>
     </div>
   );
 };
