@@ -14,7 +14,7 @@ const Routes = () => (
       <Route path='articles' component={AllArticles} />
       <Route path='articles/:title' component={Article} />
       <Route path='new' component={NewPost} />
-      <Route path='contact' component={Contact} />
+      <Route path='who' component={Contact} />
     </Route>
   </Router>
 );
