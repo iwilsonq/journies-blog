@@ -1,21 +1,58 @@
 .hero
   min-height: 90vh
   width: 100%
+  color: #fff
+  display: flex
+  flex-direction: column
+  justify-content: center
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url(http://localhost:3090/img/meadow.jpg)
   background-color: #f4f4f4
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  h2
+    width: auto
   .welcome
-    background-color: #1B5E20
-    color: #fff
-    width: 100vw
+    width: 50%
   .why
   h3
     padding-bottom: 10px
   .row
     height: 100%
-  .banner
-    padding-top: 15px
-    min-height: 24vw
-    width: 100vw
-    background-image: url(https://journies.herokuapp.com/img/stoic-banner.jpg)
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
+
+.intro
+  background-color: $dark
+  min-height: 90vh
+  padding: 20px
+  color: #fff
+  .email-form
+    display: flex
+    background-color: #fff
+    padding: 10px
+  input[type=email]
+    color: #333
+    flex: 5
+    margin-right: 10px
+    border: none
+    border-bottom: 2px solid $blue
+  ::-webkit-input-placeholder
+    color: $blue
+  :-moz-placeholder
+    color: $blue
+  ::-moz-placeholder
+    color: $blue
+  :-ms-input-placeholder
+    color: $blue
+
+  button
+    flex: 1
+  h2
+    color: $blue
+  p
+    font-family: 'Lato', sans-serif
+  .col-sm-6, .col-sm-8
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  .row
+    margin-bottom: 40px

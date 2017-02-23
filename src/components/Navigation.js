@@ -16,7 +16,7 @@ class Navigation extends Component {
         <div className="navigation">
           <div className="brand">
             <Link to='/'>
-              <h2>Zen Developer</h2>
+              <h2>Stoic Developer</h2>
             </Link>
           </div>
 
