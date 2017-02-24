@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
+const ax = axios.create({
+  baseURL: 'https://journies.herokuapp.com'
+});
 
 class Intro extends Component {
+  handleSignUp() {
+    const email = this.refs.email.value;
+    ax.post('/subscribers', { email })
+      .then(res => console.log(res.data))
+      .catch(err => { throw new Error(err); });
+  }
+
   render() {
     return (
       <div className="intro">
@@ -29,8 +41,16 @@ class Intro extends Component {
           </div>
           <div className="row">
             <div className="col-sm-offset-5 col-sm-7 email-form">
-              <input type="email" placeholder="email" />
-              <button className="btn btn-success">Sign up!</button>
+              <input
+                type="email"
+                placeholder="email"
+                ref="email"
+              />
+              <button className="btn btn-success"
+                onClick={this.handleSignUp.bind(this)}
+              >
+                Sign up!
+              </button>
             </div>
           </div>
         </div>
