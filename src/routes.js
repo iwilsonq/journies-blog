@@ -8,7 +8,7 @@ import NewPost from './components/NewPost/NewPost';
 import Contact from './components/Contact/Contact';
 
 const Routes = () => (
-  <Router history={browserHistory}>
+  <Router onUpdate={() => window.scrollTo(0,0)} history={browserHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={Home} />
       <Route path='articles' component={AllArticles} />
