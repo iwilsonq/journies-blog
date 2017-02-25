@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import logo from './stoic-logo.png';
 
 class Navigation extends Component {
   state = {
@@ -16,7 +17,7 @@ class Navigation extends Component {
         <div className="navigation">
           <div className="brand">
             <Link to='/'>
-              <h2>Stoic Developer</h2>
+              <img src={logo} alt="The Stoic Developer" className="logo" />
             </Link>
           </div>
 
