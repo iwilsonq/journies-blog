@@ -22,10 +22,12 @@
 
 .intro
   background-color: $dark
-  min-height: 90vh
   padding: 20px
   color: #fff
   .email-form
+    position: relative
+    width: 80%
+    margin: 10px auto
     display: flex
     background-color: #fff
     padding: 10px
@@ -33,17 +35,23 @@
     color: #333
     flex: 5
     margin-right: 10px
+    padding-left: 10px
     border: none
     border-bottom: 2px solid $blue
-  ::-webkit-input-placeholder
+    &:focus
+      outline: none
+      border-bottom: 3px solid $blue
+    &:focus ~ label
+      left: 5px
+      top: 0px
+      font-size: 90%
+      transition: 0.2s ease all
+  label
+    position: absolute
+    left: 22px
+    top: 17px
     color: $blue
-  :-moz-placeholder
-    color: $blue
-  ::-moz-placeholder
-    color: $blue
-  :-ms-input-placeholder
-    color: $blue
-
+    transition: 0.2s ease all
   button
     flex: 1
   h2

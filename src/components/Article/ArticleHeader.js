@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatSimpleDate } from '../../utils/helpers';
 
 const ArticleHeader = props => {
   return (
@@ -12,7 +13,7 @@ const ArticleHeader = props => {
       <div className="author-info">
         <p className="lead">Ian Wilson</p>
         <p className="details">Software developer at Pirashield. Does nothing which is of no use, though it seems.</p>
-        <p className="details date-posted read-length">Feb 13 <span className="midDotDivider"></span> 3 min read</p>
+        <p className="details date-posted read-length">{formatSimpleDate(props.dateCreated)}</p>
       </div>
     </div>
   );

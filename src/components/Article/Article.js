@@ -14,12 +14,11 @@ export default class Article extends Component {
       const currentArticle = articles.findIndex(article => {
         return path === urlify(article.title);
       });
-
-      const { title, subtitle, content, image, caption } = articles[currentArticle];
+      const { title, subtitle, content, image, caption, created } = articles[currentArticle];
       return (
         <div className="article">
           <div className="content">
-            <ArticleHeader />
+            <ArticleHeader dateCreated={created} />
             <h1 className="title">{title}</h1>
             <p className="lead">{subtitle}</p>
           </div>
