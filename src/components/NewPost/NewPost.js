@@ -48,7 +48,7 @@ export default class NewPost extends Component {
 
     ax.post('/articles', params)
       .then(results => {
-        console.log(results.data);
+        console.log(results);
         browserHistory.push('/');
       })
       .catch(err => {
@@ -59,9 +59,6 @@ export default class NewPost extends Component {
   render() {
     return (
       <div className="new-post article">
-        <div className="content">
-          <ArticleHeader />
-        </div>
 
         <div className="cover-photo">
           <img id="cover-image" src="" />
