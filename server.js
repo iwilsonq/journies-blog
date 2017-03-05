@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+app.use(express.static('public'));
 
 if (process.env.NODE_ENV !== 'production') {
   const webpack = require('webpack');

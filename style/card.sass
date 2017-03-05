@@ -1,0 +1,28 @@
+.hero-card
+  position: relative
+  padding: 15px
+  margin: 30px auto 15px
+  background: #f4f4f4
+  z-index: 1
+  .icon-set
+    display: flex
+    justify-content: space-between
+    z-index: 2
+    &.space-around
+      justify-content: space-around
+    .fa
+      font-size: 50px
+  img.rounded
+    opacity: 0.3
+    z-index: 3
+    position: absolute
+    left: calc(50% - 50px)
+    top: calc(50% - 50px)
+    width: 100px
+    height: 100px
+    border-radius: 50%
+    transition: 0.5s
+    &:hover
+      opacity: 1
+      transform: rotate(1turn)
+      transition: 0.5s
