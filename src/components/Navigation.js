@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import logo from './stoic-logo.png';
+import AnimatedLogo from './AnimatedLogo';
 
 class Navigation extends Component {
   state = {
@@ -17,7 +17,7 @@ class Navigation extends Component {
         <div className="navigation">
           <div className="brand">
             <Link to='/'>
-              <img src={logo} alt="The Stoic Developer" className="logo" />
+              <AnimatedLogo />
             </Link>
           </div>
 
