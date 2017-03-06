@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
-import { urlify } from '../../utils/helpers';
 
 export default class Hero extends Component {
   render() {
-    const { articles } = this.props;
     return (
       <div className="hero container">
         <div className="welcome row">

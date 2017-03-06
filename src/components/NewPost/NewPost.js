@@ -38,6 +38,7 @@ export default class NewPost extends Component {
     params.append('content', JSON.stringify(this.refs.textarea.value.split('\n\n')));
     params.append('caption', this.refs.caption.value);
     params.append('image', this.refs.coverImage.files[0]);
+    params.append('category', this.refs.category.value);
 
     if (!this.refs.title.value) {
       this.setState({
@@ -95,12 +96,21 @@ export default class NewPost extends Component {
               ref="title"
               />
           </label>
-          <label htmlFor="title">
+          <label htmlFor="subtitle">
             Subtitle:
             <br />
             <input
               type="text"
               ref="subtitle"
+              />
+          </label>
+          <br />
+          <label htmlFor="category">
+            Category: (tutorials, stack, entrepreneur)
+            <br />
+            <input
+              type="text"
+              ref="category"
               />
           </label>
           <br />

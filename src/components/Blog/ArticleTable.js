@@ -8,7 +8,7 @@ const ArticleTable = ({ articles }) => {
       <div className="article-table">
         {articles.map(article => {
           return (
-            <div className="article-stub row">
+            <div className="article-stub row" key={article._id}>
               <Link to={`/blog/${urlify(article.title)}`}>
                 <div className="col-sm-8 p-t-b-15">
                   <h2>{article.title}</h2>
