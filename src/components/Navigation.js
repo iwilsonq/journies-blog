@@ -36,7 +36,7 @@ class Navigation extends Component {
                  <Link to='/'>Home</Link>
                </li>
                <li>
-                 <Link to='/articles'>Articles</Link>
+                 <Link to='/blog'>Articles</Link>
                </li>
                <li>
                  <Link to='/who'>Who am I?</Link>
@@ -50,7 +50,7 @@ class Navigation extends Component {
               <Link to='/'>Home</Link>
             </li>
             <li className="menu-item">
-              <Link to='/articles'>Articles</Link>
+              <Link to='/blog'>Blog</Link>
             </li>
             <li className="menu-item">
               <Link to='/who'>Who am I?</Link>
