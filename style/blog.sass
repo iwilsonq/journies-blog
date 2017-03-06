@@ -1,4 +1,7 @@
 .blog
+  min-height: 90vh
+  .blog-welcome
+    padding: 16px 16px
   .tab-menu
     background-color: #fff
     color: #333
@@ -6,31 +9,46 @@
     border-radius: 4px
     padding: 16px 8px
   .tab
+    cursor: pointer
     position: relative
     background-color: #303F9F
     color: #fff
     padding: 15px 0
     box-shadow: 3px 3px 2px 0px rgba(46, 61, 73, 0.15)
     transition: 0.3s
-    z-index: 0
+    z-index: 3
+    &.active
+      background-color: #03A9F4
+      transition: 0.3s
+      p
+        background-color: #03A9F4
     p
       width: 100%
-      z-index: 1
+      z-index: 2
       position: absolute
+      padding: 15px 8px
       background-color: #303F9F
       left: 0
       top: 0
       opacity: 0
       visibility: hidden
       transition: 0.3s
+      @media (max-width: 991px)
+        display: none
     &:hover
       box-shadow: 1px 1px 1px 0px rgba(46, 61, 73, 0.15)
-      background-color: #7986CB
       transition: 0.3s
       p
         z-index:
-        background-color: #7986CB
         visibility: visible
         opacity: 1
         top: 50px
         transition: 0.3s
+  .article-table
+    z-index: 0
+    padding: 32px 16px
+    .row
+      margin: 16px 0
+      border: 3px solid transparent
+      &:hover
+        border: 3px solid #303F9F

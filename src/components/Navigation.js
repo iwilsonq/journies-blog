@@ -36,7 +36,7 @@ class Navigation extends Component {
                  <Link to='/'>Home</Link>
                </li>
                <li>
-                 <Link to='/blog'>Articles</Link>
+                 <Link to='/blog'>Blog</Link>
                </li>
                <li>
                  <Link to='/who'>Who am I?</Link>
