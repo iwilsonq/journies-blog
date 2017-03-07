@@ -1,14 +1,19 @@
 import React from 'react';
-import { formatDate } from '../../utils/helpers';
+import { formatSimpleDate } from '../../utils/helpers';
 
 const Comment = props => {
+  const colors = ['#3F51B5', '#E91E63', '#4CAF50', '#FFEB3B'];
+  const randomColor = Math.floor(Math.random() * colors.length);
+
   return (
     <div className="comment">
       <div className="comment-header">
-        <img src="" alt="author" className="comment-author"/>
+        <div className="comment-author"
+          style={{ backgroundColor: colors[randomColor] }}
+        />
         <div className="author-details">
-          <div className="author">{props.user || 'Anon'}</div>
-          <div className="date-created">{formatDate(props.createdAt)}</div>
+          <div className="author"><strong>{props.name}</strong></div>
+          <div className="date-created">{formatSimpleDate(props.createdAt)}</div>
         </div>
       </div>
       <div className="comment-content">

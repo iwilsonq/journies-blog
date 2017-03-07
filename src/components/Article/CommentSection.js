@@ -28,14 +28,16 @@ class CommentSection extends Component {
   }
 
   handleSubmitComment(e) {
-    console.log(this.refs.comment.value);
-    if (e.keyCode === 13 && this.refs.comment.value !== '') {
+    if (e.keyCode === 13 && this.refs.comment.value !== ''
+    && this.refs.name.value !== '') {
       ax.post(`/articles/${this.props.currentArticle._id}/comments`, {
-        content: this.refs.comment.value
+        content: this.refs.comment.value,
+        name: this.refs.name.value
       })
       .then(response => {
         console.log(response);
         this.fetchComments();
+        this.refs.name.value = '';
         this.refs.comment.value = '';
       })
       .catch(err => console.error(err));
@@ -47,6 +49,14 @@ class CommentSection extends Component {
     return (
       <div className="comment-section">
         <h2>Comments</h2>
+
+        <label htmlFor="name">Your name:</label><br />
+        <input name="name"
+          type="text"
+          ref="name"
+          placeholder="Jon Snow"
+          onKeyDown={this.handleSubmitComment.bind(this)}
+        />
 
         <input
           name="comment"
