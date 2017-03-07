@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ArticleHeader from './ArticleHeader';
 import ArticleFooter from './ArticleFooter';
+import CommentSection from './CommentSection';
 import { urlify, markdownParser } from '../../utils/helpers';
 import { Gist, Divider } from '../common';
 
@@ -54,6 +55,7 @@ export default class Article extends Component {
             </div>
             <Divider />
             <ArticleFooter />
+            <CommentSection currentArticle={articles[currentArticle]} />
           </div>
         </div>
       );
