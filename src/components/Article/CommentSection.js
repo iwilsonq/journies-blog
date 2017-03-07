@@ -45,7 +45,6 @@ class CommentSection extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="comment-section">
         <h2>Comments</h2>
@@ -67,6 +66,10 @@ class CommentSection extends Component {
         />
 
         <div className="comments">
+          {
+            !this.state.comments.length &&
+            <p>Be the first to post a comment! :3</p>
+          }
           {this.state.comments.map(comment => <Comment key={comment._id} {...comment} />)}
         </div>
       </div>

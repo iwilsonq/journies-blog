@@ -6,7 +6,7 @@ class Blog extends Component {
     super(props);
     this.tabs = ['tutorials', 'stack', 'entrepreneur'];
     this.state = {
-      currentTab: ''
+      currentTab: 'tutorials'
     };
   }
 
@@ -40,7 +40,7 @@ class Blog extends Component {
 
         <div className="row tab-menu">
           <div className="col-md-4 text-center">
-            <div className="tab"
+            <div className="tab active"
               id='tutorials'
               onClick={this.changeActiveTab.bind(this, 'tutorials')}
             >
