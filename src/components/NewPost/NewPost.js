@@ -61,12 +61,13 @@ export default class NewPost extends Component {
     return (
       <div className="new-post article">
 
-        <div className="cover-photo">
-          <img id="cover-image" src="" />
-          <p className="caption"></p>
-        </div>
-
         <div className="content">
+
+          <div className="cover-photo">
+            <img id="cover-image" src="" />
+            <p className="caption"></p>
+          </div>
+
           <label htmlFor="coverImage">
             Cover Image:
             <br/>

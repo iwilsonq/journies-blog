@@ -1,6 +1,7 @@
 export const markdownParser = textBlock => {
   const chars = textBlock.split('');
   const indicesToDelete = [];
+
   for (let i = 1; i < chars.length; i++) {
     let currentChar = chars[i];
     let prevChar = chars[i - 1];
@@ -10,8 +11,8 @@ export const markdownParser = textBlock => {
     }
   }
 
-  const mergedDoubleStars = deleteCharactersAtIndices(chars, indicesToDelete);
-  return replaceMarkdown(mergedDoubleStars).join('');
+  const mergedEnchancers = deleteCharactersAtIndices(chars, indicesToDelete);
+  return replaceMarkdown(mergedEnchancers).join('');
 };
 
 const stackMatches = {
@@ -22,7 +23,8 @@ const stackMatches = {
   '#': '#',
   '##': '##',
   '###': '###',
-  '`': '`'
+  '`': '`',
+  '```': '```'
 };
 
 const tagMatches =  {
@@ -35,7 +37,8 @@ const tagMatches =  {
   '#': 'h1',
   '##': 'h2',
   '###': 'h3',
-  '`': 'code'
+  '`': 'code',
+  '```': 'pre'
 };
 
 const replaceMarkdown = charArray => {
