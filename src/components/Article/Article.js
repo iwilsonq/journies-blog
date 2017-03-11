@@ -23,12 +23,12 @@ export default class Article extends Component {
             <ArticleHeader dateCreated={created} />
             <h1 className="title">{title}</h1>
             <p className="lead">{subtitle}</p>
-          </div>
-          <div className="content">
+
             <div className="cover-photo">
               <img src={image} />
               <p className="caption">{caption}</p>
             </div>
+            
             <ArticleBody content={content} />
             <Divider />
             <ArticleFooter />
